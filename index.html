@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechBazar</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="toast"></div>
+<nav>
+<h2><i class="fa-solid fa-bag-shopping"></i> TechBazar</h2>
+<ul>
+<li><a onclick="showPage('home')">Home</a></li>
+<li><a onclick="showPage('shop')">Shop</a></li>
+<li><a onclick="showPage('about')">About</a></li>
+<li><a onclick="showPage('contact')">Contact</a></li>
+<li><a onclick="showPage('login')" id="loginLink">Login</a></li>
+<li><a onclick="showPage('cart')"><i class="fa-solid fa-cart-shopping"></i> <span id="cartCount">0</span></a></li>
+</ul>
+</nav>
+
+<div id="home" class="page">
+  <div class="hero"><h1>Best Electronics in Pakistan</h1><p>Upto 50% Off</p><br><button class="btn" onclick="showPage('shop')">Shop Now</button></div>
+  <h2 class="section-title">Featured Products</h2>
+  <div class="products" id="featured"></div>
+</div>
+
+<div id="shop" class="page">
+  <div class="search-bar"><input type="text" id="searchInput" placeholder="Search iPhone, Laptop..." onkeyup="searchProducts()"></div>
+  <div class="categories">
+    <button class="active" onclick="filterCat('all',this)">All</button>
+    <button onclick="filterCat('Smartphone',this)">Mobiles</button>
+    <button onclick="filterCat('Laptop',this)">Laptops</button>
+    <button onclick="filterCat('Headphones',this)">Headphones</button>
+    <button onclick="filterCat('Watch',this)">Watches</button>
+  </div>
+  <div class="products" id="shopProducts"></div>
+</div>
+
+<div id="product-detail" class="page"><div id="detailContent"></div></div>
+
+<div id="about" class="page"><div class="box"><h2>About TechBazar</h2><br><p>Pakistan's trusted electronics store since 2020.<br><br>✓ Original Warranty<br>✓ 7 Days Return<br>✓ Cash on Delivery</p></div></div>
+
+
+<div id="contact" class="page">
+  <div class="box">
+    <h2>Contact Us</h2><br>
+    <input type="text" id="contactName" placeholder="Your Name">
+    <input type="email" id="contactEmail" placeholder="Your Email">
+    <textarea id="contactMsg" rows="4" placeholder="Your Message"></textarea>
+    <button class="btn" style="width:100%" onclick="sendContact()">Send Message</button>
+  </div>
+</div>
+
+
+<div id="login" class="page"><div class="box"><h2>Login to Continue</h2><br><input type="text" id="loginEmail" placeholder="Enter Email"><input type="password" placeholder="Password (any)"><button onclick="doLogin()" class="btn" style="width:100%">Login</button><br><br><p>Account nahi hai? <a href="#">Signup</a></p></div></div>
+
+<div id="cart" class="page"><div class="box"><h2>Your Cart</h2><br><div id="cartItems"><p>Cart is empty</p></div><hr style="margin:20px 0;"><h3>Total: Rs. <span id="total">0</span></h3><br><button class="btn" style="width:100%" onclick="goToCheckout()">Proceed to Checkout</button></div></div>
+
+<div id="checkoutForm" class="page"><div class="box"><h2>Checkout Details</h2><br><input type="text" id="name" placeholder="Full Name"><input type="tel" id="phone" placeholder="Phone Number"><textarea id="address" placeholder="Complete Address" rows="3"></textarea><button onclick="placeOrder()" class="btn" style="width:100%">Place Order</button></div></div>
+
+<div id="successModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:white; padding:40px 30px; border-radius:16px; text-align:center; max-width:350px; width:90%; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+    <div style="width:60px; height:60px; background:#4CAF50; color:white; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:30px; margin:0 auto 15px;">✓</div>
+    <h2 id="successTitle" style="margin-bottom:10px;">Success!</h2>
+    <p id="successMsg" style="color:#666; margin-bottom:20px;"></p>
+    <button class="btn" style="width:100%" onclick="closeSuccess()">OK</button>
+  </div>
+</div>
+
+
+<footer><p><b>TechBazar</b> - Complete E-commerce</p></footer>
+
+<script src="script.js?v=2"></script>
+</body>
+</html>

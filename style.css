@@ -1,0 +1,22 @@
+
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial;}
+body{background:#f7f7f9; min-height:100vh; display:flex; flex-direction:column;}
+nav{background:#111; color:white; padding:15px 5%; display:flex; justify-content:flex-start; align-items:center; position:sticky; top:0; z-index:1000; gap:30px;}
+nav h2{color:#ff5722;} nav ul{list-style:none; display:flex; gap:20px; align-items:center; margin-left:30px;} nav ul a{color:white; text-decoration:none; cursor:pointer; font-weight:600;}
+.hero{background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8'); background-size:cover; background-position:center; color:white; text-align:center; padding:100px 20px;}
+.btn{background:#ff5722; color:white; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; display:inline-block; border:none; cursor:pointer;}
+.page{display:none; padding:20px 5%;} #home{display:block; padding:0;}
+.section-title{text-align:center; margin:40px 0 5px; font-size:28px;}
+.products{display:flex; flex-wrap:wrap; gap:22px; justify-content:center; padding:20px;}
+.search-bar{max-width:600px; margin:20px auto;} .search-bar input{width:100%; padding:12px 15px; border-radius:8px; border:1px solid #ccc;}
+.categories{text-align:center;} .categories button{padding:8px 18px; margin:4px; border:1px solid #ddd; border-radius:20px; background:white; cursor:pointer;} .categories button.active{background:#111; color:white;}
+.product{background:white; width:260px; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.07); display:flex; flex-direction:column; overflow:hidden;}
+.product img{width:100%; height:190px; object-fit:cover; cursor:pointer;} .info{padding:15px; display:flex; flex-direction:column; flex:1;}
+.info button{width:100%; border:none; padding:11px; border-radius:8px; cursor:pointer; margin-top:8px; font-weight:bold;}
+.view-btn{background:#111; color:white;} .add-btn{background:#ff5722; color:white;}
+.box{max-width:600px; margin:100px auto; background:white; padding:40px; border-radius:16px; box-shadow:0 5px 20px rgba(0,0,0,0.05); text-align:center;}
+input, textarea{width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:8px;}
+footer{background:#111; color:#bbb; text-align:center; padding:30px; margin-top:auto;}
+#toast{position:fixed; bottom:20px; right:20px; background:#111; color:white; padding:12px 20px; border-radius:8px; display:none; z-index:9999;}
+.detail-wrap{max-width:900px; margin:40px auto; background:white; display:flex; gap:30px; padding:30px; border-radius:16px;}
+.detail-wrap img{width:50%; border-radius:12px;}
